@@ -1,9 +1,10 @@
 #include "monty.h"
 /**
- * 
- * 
- * 
- * 
+ * checker_1 - check if the file is accessable,
+ * and the arguments is not up to one argu
+ * @filename: the name of the file
+ * @argc: the number of arguments
+ * Return: void
 */
 void checker_1 (const char *filename, int argc)
 {
