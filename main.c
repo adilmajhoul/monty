@@ -1,5 +1,3 @@
-#define _GNU_SOURCE
-#include <stdio.h>
 #include "monty.h"
 
 int main(__attribute__((unused)) int argc, char *argv[])
