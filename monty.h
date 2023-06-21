@@ -68,5 +68,6 @@ int is_all_spaces(char *str);
 void which_error(int error_number, unsigned int line, char *opcode);
 void file_errors(int error_number, unsigned int line);
 void common_errors(int error_number, unsigned int line, char *opcode);
+void checker_1 (const char *filename, int argc);
 
 #endif
