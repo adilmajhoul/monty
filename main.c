@@ -42,7 +42,7 @@ int main(__attribute__((unused)) int argc, char *argv[])
 
     free(buffer);
     fclose(file_descriptor);
-    free_stack();
+    /*free_stack();*/
 
     return 0;
 }
