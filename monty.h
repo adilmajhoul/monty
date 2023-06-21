@@ -1,6 +1,17 @@
-#define _GNU_SOURCE
 #ifndef MONTY_
 #define MONTY_
+#define _GNU_SOURCE
+/* COMMON errors */
+#define MALLOC_FAIL 90
+#define UNKNOWN_INSTRUCTION 91
+
+/* file errors FROM: 100 T0 111*/
+#define NO_FILE_ERROR 100
+#define PUSH_ERROR 101
+#define PINT_ERROR 102
+#define POP_ERROR 103
+#define SWAP_ERROR 104
+#define ADD_ERROR 105
 
 /* headers */
 #include <ctype.h>
@@ -52,5 +63,10 @@ void free_stack(stack_t *head);
 
 /* checks if a line have only white space cahrachters */
 int is_all_spaces(char *str);
+
+/* error handling */
+void which_error(int error_number, unsigned int line, char *opcode);
+void file_errors(int error_number, unsigned int line);
+void common_errors(int error_number, unsigned int line, char *opcode);
 
 #endif
