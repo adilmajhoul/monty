@@ -5,7 +5,7 @@
  * Return: nothing
  */
 
-void free_stack(stack_t *head)
+void free_stack(void)
 {
     stack_t *head_copy;
 

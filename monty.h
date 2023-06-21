@@ -59,15 +59,20 @@ typedef struct instruction_s
 void push(stack_t **stack, unsigned int parameter);
 void pall(stack_t **stack, unsigned int line_number);
 void (*select_operation(char *opcode_string))(stack_t **, unsigned int);
-void free_stack(stack_t *head);
+void free_stack(void);
 
 /* checks if a line have only white space cahrachters */
 int is_all_spaces(char *str);
 
 /* error handling */
-void which_error(int error_number, unsigned int line, char *opcode);
+void which_error(int error_number, unsigned int line, char *opcode, char *buffer);
 void file_errors(int error_number, unsigned int line);
 void common_errors(int error_number, unsigned int line, char *opcode);
-void checker_1 (const char *filename, int argc);
-
+void checker_1(const char *filename, int argc);
+/*check if push parameter is digit */
+int is_digit(char *str);
+/* check file access rights */
+void file_access(char *file_name);
+/* check if file mentioned in argv*/
+void check_argv(const char *fil_ename, int argc);
 #endif
