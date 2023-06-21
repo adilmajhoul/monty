@@ -1,23 +1,48 @@
 #include "monty.h"
 
+stack_t *head = NULL;
+
 int main(__attribute__((unused)) int argc, char *argv[])
 {
 
+    void (*func)(stack_t **stack, unsigned int line_number);
+
     size_t line_length = 0;
-    int bytes_read = 0;
+    ssize_t bytes_read = 0;
+
+    size_t line = 1;
 
     FILE *file_descriptor;
-
     char *file_name = argv[1];
-
     char *buffer = NULL;
+    char *opcode;
+    char *parameter;
 
     file_descriptor = fopen(file_name, "r");
-    checker_1(file_name, argc);
+
     while ((bytes_read = getline(&buffer, &line_length, file_descriptor)) != -1)
     {
-        printf("%s", buffer);
+        opcode = strtok(buffer, "\t\n\r\v\f ");
+        parameter = strtok(NULL, "\t\n\r\v\f ");
+
+        if (opcode != NULL)
+        {
+            func = select_operation(opcode);
+
+            if (strcmp(opcode, "push") == 0)
+            {
+                func(&head, atoi(parameter));
+            }
+            else
+                func(&head, line);
+        }
+
+        line++;
     }
 
-    return (0);
+    free(buffer);
+    fclose(file_descriptor);
+    free_stack(head);
+
+    return 0;
 }

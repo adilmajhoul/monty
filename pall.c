@@ -7,11 +7,18 @@
  *
  * Return: nothing
  */
-void pall(stack_t **stack)
+void pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 {
     stack_t *current = NULL;
     current = *stack;
 
-    for (; current != NULL; current = current->next)
-        printf("%d\n", current->next);
+    if (current != NULL)
+    {
+        while (current)
+        {
+            printf("%d\n", current->n);
+
+            current = current->next;
+        }
+    }
 }

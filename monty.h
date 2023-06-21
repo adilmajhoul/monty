@@ -1,6 +1,7 @@
+#define _GNU_SOURCE
 #ifndef MONTY_
 #define MONTY_
-#define _GNU_SOURCE
+
 /* headers */
 #include <ctype.h>
 #include <fcntl.h>
@@ -26,6 +27,9 @@ typedef struct stack_s
     struct stack_s *next;
 } stack_t;
 
+/* stack declaration "global variable"*/
+extern stack_t *head;
+
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -39,7 +43,14 @@ typedef struct instruction_s
     char *opcode;
     void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-void pall(stack_t **stack);
+
+/* my functions*/
 void push(stack_t **stack, unsigned int parameter);
-void checker_1 (const char *filename, int argc);
+void pall(stack_t **stack, unsigned int line_number);
+void (*select_operation(char *opcode_string))(stack_t **, unsigned int);
+void free_stack(stack_t *head);
+
+/* checks if a line have only white space cahrachters */
+int is_all_spaces(char *str);
+
 #endif
