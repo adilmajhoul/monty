@@ -17,20 +17,24 @@ int main(__attribute__((unused)) int argc, char *argv[])
     char *buffer = NULL;
     char *opcode;
     char *parameter;
+    char *valid_opcodes[] = {"push", "pall", NULL};
 
     file_descriptor = fopen(file_name, "r");
 
     check_argv(file_name, argc);
     file_access(file_name);
 
-        while ((bytes_read = getline(&buffer, &line_length, file_descriptor)) != -1)
+    while ((bytes_read = getline(&buffer, &line_length, file_descriptor)) != -1)
     {
         opcode = strtok(buffer, "\t\n\r\v\f ");
         parameter = strtok(NULL, "\t\n\r\v\f ");
         if (strcmp(opcode, "push") == 0 && !is_digit(parameter))
         {
-            which_error(PUSH_ERROR, line, NULL, buffer);
-            exit(EXIT_FAILURE);
+            which_error(PUSH_ERROR, NULL, line, buffer);
+        }
+        if (!valid_opcode(opcode, valid_opcodes))
+        {
+            which_error(UNKNOWN_INSTRUCTION, opcode, line, buffer);
         }
 
         if (opcode != NULL)
@@ -38,9 +42,7 @@ int main(__attribute__((unused)) int argc, char *argv[])
             func = select_operation(opcode);
 
             if (strcmp(opcode, "push") == 0)
-            {
                 func(&head, atoi(parameter));
-            }
             else
                 func(&head, line);
         }

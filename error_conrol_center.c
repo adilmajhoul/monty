@@ -1,25 +1,17 @@
 #include "monty.h"
 
-void which_error(int error_number, unsigned int line, char *opcode, char *buffer)
-{
-    if (error_number > 99)
-        file_errors(error_number, line);
-
-    if (error_number < 100)
-        common_errors(error_number, line, opcode);
-    else
-        return;
-
-    free_stack();
-    if (buffer)
-        free(buffer);
-    exit(EXIT_FAILURE);
-}
-
-void file_errors(int error_number, unsigned int line)
+void which_error(int error_number, char *opcode, unsigned int line, char *buffer)
 {
     switch (error_number)
     {
+        /* common errors*/
+    case MALLOC_FAIL:
+        fprintf(stderr, "Error: malloc failed\n");
+        break;
+    case UNKNOWN_INSTRUCTION:
+        fprintf(stderr, "L%d: unknown instruction %s\n", line, opcode);
+        break;
+        /*logic errrors */
     case NO_FILE_ERROR:
         fprintf(stderr, "USAGE: monty file\n");
         break;
@@ -41,19 +33,9 @@ void file_errors(int error_number, unsigned int line)
     default:
         break;
     }
-}
 
-void common_errors(int error_number, unsigned int line, char *opcode)
-{
-    switch (error_number)
-    {
-    case MALLOC_FAIL:
-        fprintf(stderr, "Error: malloc failed\n");
-        break;
-    case UNKNOWN_INSTRUCTION:
-        fprintf(stderr, "L%d: unknown instruction %s\n", line, opcode);
-        break;
-    default:
-        break;
-    }
+    free_stack();
+    if (buffer)
+        free(buffer);
+    exit(EXIT_FAILURE);
 }

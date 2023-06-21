@@ -65,9 +65,8 @@ void free_stack(void);
 int is_all_spaces(char *str);
 
 /* error handling */
-void which_error(int error_number, unsigned int line, char *opcode, char *buffer);
-void file_errors(int error_number, unsigned int line);
-void common_errors(int error_number, unsigned int line, char *opcode);
+void which_error(int error_number, char *opcode, unsigned int line, char *buffer);
+
 void checker_1(const char *filename, int argc);
 /*check if push parameter is digit */
 int is_digit(char *str);
@@ -75,4 +74,7 @@ int is_digit(char *str);
 void file_access(char *file_name);
 /* check if file mentioned in argv*/
 void check_argv(const char *fil_ename, int argc);
+
+int valid_opcode(char *opcode, char **valid_opcodes);
+
 #endif
