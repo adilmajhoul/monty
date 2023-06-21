@@ -41,4 +41,5 @@ typedef struct instruction_s
 } instruction_t;
 void pall(stack_t **stack);
 void push(stack_t **stack, unsigned int parameter);
+void checker_1 (const char *filename, int argc);
 #endif

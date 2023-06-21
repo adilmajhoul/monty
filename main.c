@@ -13,7 +13,7 @@ int main(__attribute__((unused)) int argc, char *argv[])
     char *buffer = NULL;
 
     file_descriptor = fopen(file_name, "r");
-
+    checker_1(file_name, argc);
     while ((bytes_read = getline(&buffer, &line_length, file_descriptor)) != -1)
     {
         printf("%s", buffer);
