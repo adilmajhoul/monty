@@ -1,5 +1,13 @@
 #include "monty.h"
 
+/**
+ * pint - .....
+ *
+ * @stack: head of stack
+ * @line_number: ...
+ *
+ * Return: nothing
+ */
 void pint(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 {
 

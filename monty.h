@@ -80,5 +80,7 @@ int valid_opcode(char *opcode, char **valid_opcodes);
 
 /*task 1*/
 void pint(stack_t **stack, __attribute__((unused)) unsigned int line_number);
+/*task 2*/
+void pop(stack_t **stack, __attribute__((unused)) unsigned int line_number);
 
 #endif

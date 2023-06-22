@@ -19,7 +19,7 @@ int main(__attribute__((unused)) int argc, char *argv[])
 	char *buffer = NULL;
 	char *opcode;
 	char *parameter;
-	char *valid_opcodes[] = {"push", "pall", "pint", NULL};
+	char *valid_opcodes[] = {"push", "pall", "pint", "pop", NULL};
 
 	file_descriptor = fopen(file_name, "r");
 	check_argv(file_name, argc);

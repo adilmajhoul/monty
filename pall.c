@@ -4,6 +4,7 @@
  * pall - print all elements of stack starting from the top (head)
  *
  * @stack: head of stack
+ * @line_number: ...
  *
  * Return: nothing
  */

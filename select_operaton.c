@@ -13,6 +13,7 @@ void (*select_operation(char *opcode_string))(stack_t **, unsigned int)
 		{"push", push},
 		{"pall", pall},
 		{"pint", pint},
+		{"pop", pop},
 		{NULL, NULL}};
 
 	int i = 0;
