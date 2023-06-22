@@ -26,8 +26,12 @@ int main(__attribute__((unused)) int argc, char *argv[])
 
     while ((bytes_read = getline(&buffer, &line_length, file_descriptor)) != -1)
     {
+        if (is_all_whitespace(buffer))
+            continue;
+
         opcode = strtok(buffer, "\t\n\r\v\f ");
         parameter = strtok(NULL, "\t\n\r\v\f ");
+
         if (strcmp(opcode, "push") == 0 && !is_digit(parameter))
         {
             which_error(PUSH_ERROR, NULL, line, buffer);

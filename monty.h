@@ -62,7 +62,7 @@ void (*select_operation(char *opcode_string))(stack_t **, unsigned int);
 void free_stack(void);
 
 /* checks if a line have only white space cahrachters */
-int is_all_spaces(char *str);
+int is_all_whitespace(char *str);
 
 /* error handling */
 void which_error(int error_number, char *opcode, unsigned int line, char *buffer);

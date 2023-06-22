@@ -5,8 +5,8 @@
  * @filename: the name of the file
  * @argc: the number of arguments
  * Return: void
-*/
-void checker_1 (const char *filename, int argc)
+ */
+void checker_1(const char *filename, int argc)
 {
     if (filename == NULL || argc != 2)
     {
@@ -19,24 +19,3 @@ void checker_1 (const char *filename, int argc)
         exit(EXIT_FAILURE);
     }
 }
-/**
-*
-*
-*
-*/ 
-int is_all_spaces(char *str)
-{
-
-    int i = 0;
-
-    while (str[i])
-    {
-        if (strchr("\t\n\r\v\f ", str[i]) != NULL)
-            return (0);
-
-        i++;
-    }
-
-    return (1);
-}
-
