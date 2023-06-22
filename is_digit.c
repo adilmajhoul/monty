@@ -12,7 +12,7 @@ int is_digit(char *str)
 
     for (; str[i] != '\0'; i++)
     {
-        if (!isdigit((unsigned char)str[i]))
+        if (!isdigit(str[i]))
             return (0);
     }
     return (1);

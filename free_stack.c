@@ -7,13 +7,13 @@
 
 void free_stack(void)
 {
-    stack_t *current = head;
-    stack_t *tmp;
+    stack_t *head_copy;
 
-    while (current != NULL)
+    while (head)
     {
-        tmp = current;
-        current = current->next;
-        free(tmp);
+        head_copy = head;
+        head = head->next;
+
+        free(head_copy);
     }
 }

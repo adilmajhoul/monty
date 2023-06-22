@@ -2,6 +2,9 @@
 
 void file_access(char *file_name)
 {
-    if (access(file_name, F_OK) == -1)
-        which_error(NO_FILE_ERROR, NULL, 0, NULL);
+    if (access(file_name, R_OK) == -1)
+    {
+        fprintf(stderr, "Error: Can't open file %s\n", file_name);
+        exit(EXIT_FAILURE);
+    }
 }
