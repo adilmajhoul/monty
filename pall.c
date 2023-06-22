@@ -9,9 +9,11 @@
  * Return: nothing
  */
 
-void pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
+void pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *current = NULL;
+
+	(void)line_number;
 
 	current = *stack;
 
