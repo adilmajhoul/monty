@@ -7,10 +7,14 @@
  *
  * Return: nothing
  */
+
 void pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 {
     stack_t *current = NULL;
     current = *stack;
+
+    if (current == NULL)
+        return;
 
     if (current != NULL)
     {
