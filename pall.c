@@ -10,19 +10,20 @@
 
 void pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 {
-    stack_t *current = NULL;
-    current = *stack;
+	stack_t *current = NULL;
 
-    if (current == NULL)
-        return;
+	current = *stack;
 
-    if (current != NULL)
-    {
-        while (current)
-        {
-            printf("%d\n", current->n);
+	if (current == NULL)
+		return;
 
-            current = current->next;
-        }
-    }
+	if (current != NULL)
+	{
+		while (current)
+		{
+			printf("%d\n", current->n);
+
+			current = current->next;
+		}
+	}
 }

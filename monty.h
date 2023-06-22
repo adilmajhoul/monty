@@ -33,9 +33,9 @@
  */
 typedef struct stack_s
 {
-    int n;
-    struct stack_s *prev;
-    struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /* stack declaration "global variable"*/
@@ -51,8 +51,8 @@ extern stack_t *head;
  */
 typedef struct instruction_s
 {
-    char *opcode;
-    void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 /* my functions*/
@@ -65,7 +65,8 @@ void free_stack(void);
 int is_all_whitespace(char *str);
 
 /* error handling */
-void which_error(int error_number, char *opcode, unsigned int line, char *buffer);
+void which_error(int error_number, char *opcode, unsigned int line,
+				 char *buffer);
 
 void checker_1(const char *filename, int argc);
 /*check if push parameter is digit */
