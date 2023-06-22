@@ -4,14 +4,14 @@ void which_error(int error_number, char *opcode, unsigned int line, char *buffer
 {
     switch (error_number)
     {
-        /* common errors*/
+        /* common errors */
     case MALLOC_FAIL:
         fprintf(stderr, "Error: malloc failed\n");
         break;
     case UNKNOWN_INSTRUCTION:
         fprintf(stderr, "L%d: unknown instruction %s\n", line, opcode);
         break;
-        /*logic errrors */
+        /* logic errors */
     case NO_FILE_ERROR:
         fprintf(stderr, "USAGE: monty file\n");
         break;
@@ -33,9 +33,7 @@ void which_error(int error_number, char *opcode, unsigned int line, char *buffer
     default:
         break;
     }
-
+    free(buffer);
     free_stack();
-    if (buffer)
-        free(buffer);
     exit(EXIT_FAILURE);
 }

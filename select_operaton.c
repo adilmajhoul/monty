@@ -1,21 +1,17 @@
 #include "monty.h"
-
 void (*select_operation(char *opcode_string))(stack_t **, unsigned int)
 {
-    instruction_t select_operation[] = {
+    instruction_t instructions[] = {
         {"push", push},
         {"pall", pall},
         {NULL, NULL}};
-
     int i = 0;
 
-    while (select_operation[i].opcode != NULL)
+    while (instructions[i].opcode != NULL)
     {
-        if (strcmp(opcode_string, select_operation[i].opcode) == 0)
-            return select_operation[i].f;
-
+        if (strcmp(instructions[i].opcode, opcode_string) == 0)
+            return (instructions[i].f);
         i++;
     }
-
-    return NULL;
+    return (NULL);
 }
