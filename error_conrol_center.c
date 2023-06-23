@@ -9,6 +9,9 @@
 void which_error(int error_number, char *opcode, unsigned int line,
 				 char *buffer)
 {
+	if (error_number > 307)
+		which_error2(error_number, opcode, line, buffer);
+
 	switch (error_number)
 	{
 		/* common errors*/
@@ -37,7 +40,31 @@ void which_error(int error_number, char *opcode, unsigned int line,
 	case ADD_ERROR:
 		fprintf(stderr, "L%d: can't add, stack too short\n", line);
 		break;
-		/* advanced tasks */
+
+	default:
+		break;
+	}
+
+	free_stack();
+	if (buffer)
+		free(buffer);
+	exit(EXIT_FAILURE);
+}
+/**
+ * which_error2 - Handle different error cases
+ * @error_number: The error code indicating the type of error
+ * @opcode: The opcode associated with the error (if applicable)
+ * @line: The line number where the error occurred
+ * @buffer: The buffer containing the input line (if applicable)
+ */
+void which_error2(int error_number, char *opcode, unsigned int line,
+				  char *buffer)
+{
+	(void)opcode;
+	/* advanced tasks */
+	switch (error_number)
+	{
+
 	case SUB_ERROR:
 		fprintf(stderr, "L%d: can't sub, stack too short\n", line);
 		break;
