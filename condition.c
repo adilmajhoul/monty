@@ -11,7 +11,7 @@ void conditions(char *opcode, size_t line, char *parameter, char *buffer)
 {
 	void (*func)(stack_t **stack, unsigned int line_number);
 	char *valid_opcodes[] = {"push", "pall", "pint", "pop", "swap", "add",
-							 "sub", NULL};
+							 "sub", "mul", NULL};
 
 	if (is_all_whitespace(buffer) || strstr(buffer, "nop") != NULL)
 		return;

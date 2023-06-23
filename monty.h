@@ -97,6 +97,8 @@ void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 /*task 5*/
 void sub(stack_t **stack, unsigned int line_number);
+/*task 5*/
+void mul(stack_t **stack, unsigned int line_number);
 
 void conditions(char *opcode, size_t line, char *parameter, char *buffer);
 #endif
