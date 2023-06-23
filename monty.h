@@ -2,16 +2,22 @@
 #define MONTY_
 #define _GNU_SOURCE
 /* COMMON errors */
-#define MALLOC_FAIL 90
-#define UNKNOWN_INSTRUCTION 91
+#define MALLOC_FAIL 300
+#define UNKNOWN_INSTRUCTION 301
 
 /* file errors FROM: 100 T0 111*/
-#define NO_FILE_ERROR 100
-#define PUSH_ERROR 101
-#define PINT_ERROR 102
-#define POP_ERROR 103
-#define SWAP_ERROR 104
-#define ADD_ERROR 105
+#define NO_FILE_ERROR 302
+#define PUSH_ERROR 303
+#define PINT_ERROR 304
+#define POP_ERROR 305
+#define SWAP_ERROR 306
+#define ADD_ERROR 307
+
+#define SUB_ERROR 308
+#define DIV_ERROR 309
+#define DIV_ZERO_ERROR 310
+#define MUL_ERROR 311
+#define MOD_ERROR 312
 
 /* headers */
 #include <ctype.h>
@@ -86,6 +92,8 @@ void pop(stack_t **stack, __attribute__((unused)) unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
 /*task 4*/
 void add(stack_t **stack, unsigned int line_number);
+/*task 5*/
+void sub(stack_t **stack, unsigned int line_number);
 
 void conditions(char *opcode, size_t line, char *parameter, char *buffer);
 #endif

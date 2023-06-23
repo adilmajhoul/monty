@@ -16,6 +16,7 @@ void (*select_operation(char *opcode_string))(stack_t **, unsigned int)
 		{"pop", pop},
 		{"swap", swap},
 		{"add", add},
+		{"sub", sub},
 		{NULL, NULL}};
 
 	int i = 0;

@@ -37,6 +37,23 @@ void which_error(int error_number, char *opcode, unsigned int line,
 	case ADD_ERROR:
 		fprintf(stderr, "L%d: can't add, stack too short\n", line);
 		break;
+		/* advanced tasks */
+	case SUB_ERROR:
+		fprintf(stderr, "L%d: can't sub, stack too short\n", line);
+		break;
+	case DIV_ERROR:
+		fprintf(stderr, "L%d: can't div, stack too short\n", line);
+		break;
+	case DIV_ZERO_ERROR:
+		fprintf(stderr, "L%d: division by zero\n", line);
+		break;
+	case MUL_ERROR:
+		fprintf(stderr, "L%d: can't mul, stack too short\n", line);
+		break;
+	case MOD_ERROR:
+		fprintf(stderr, "L%d: can't mod, stack too short\n", line);
+		break;
+
 	default:
 		break;
 	}
