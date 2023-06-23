@@ -1,11 +1,8 @@
+nop
 push 1
+nop
 push 2
 push 3
-push 6
-pall
-pop
-pall
-pop
-pall
-pop
+push 4
+push 5
 pall
