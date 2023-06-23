@@ -1,5 +1,4 @@
+push 20
 push 5
-push 5
-push 2
-mul
+mod
 pall

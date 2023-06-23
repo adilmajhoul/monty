@@ -95,10 +95,12 @@ void pop(stack_t **stack, __attribute__((unused)) unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
 /*task 4*/
 void add(stack_t **stack, unsigned int line_number);
-/*task 5*/
+/*task 6*/
 void sub(stack_t **stack, unsigned int line_number);
-/*task 5*/
+/*task 8*/
 void mul(stack_t **stack, unsigned int line_number);
+/*task 9*/
+void mod(stack_t **stack, unsigned int line_number);
 
 void conditions(char *opcode, size_t line, char *parameter, char *buffer);
 #endif
