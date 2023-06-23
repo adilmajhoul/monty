@@ -13,11 +13,16 @@ void conditions(char *opcode, size_t line, char *parameter, char *buffer)
 	char *valid_opcodes[] = {"push", "pall", "pint", "pop", "swap", "add",
 							 "sub", "mul", "mod", NULL};
 
+	/*char *is_comment = strtok(buffer, "\t\n\r\v\f ");*/
+
 	if (is_all_whitespace(buffer) || strstr(buffer, "nop") != NULL)
 		return;
 
 	opcode = strtok(buffer, "\t\n\r\v\f ");
 	parameter = strtok(NULL, "\t\n\r\v\f ");
+
+	if (opcode[0] == '#')
+		return;
 
 	if (strcmp(opcode, "push") == 0 && !is_digit(parameter))
 		which_error(PUSH_ERROR, NULL, line, buffer);
