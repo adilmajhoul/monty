@@ -11,8 +11,6 @@
 
 void add(stack_t **stack, unsigned int line_number)
 {
-	stack_t *temp = *stack;
-
 	if (!*stack || !(*stack)->next)
 	{
 		which_error(ADD_ERROR, NULL, line_number, NULL);
@@ -20,7 +18,5 @@ void add(stack_t **stack, unsigned int line_number)
 
 	(*stack)->next->n += (*stack)->n;
 
-	*stack = temp->next;
-
-	free(temp);
+	pop(&head, line_number);
 }
