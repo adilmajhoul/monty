@@ -19,6 +19,7 @@ void (*select_operation(char *opcode_string))(stack_t **, unsigned int)
 		{"sub", sub},
 		{"mul", mul},
 		{"mod", mod},
+		{"div", _div},
 		{NULL, NULL}};
 
 	int i = 0;

@@ -97,6 +97,8 @@ void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 /*task 6*/
 void sub(stack_t **stack, unsigned int line_number);
+/*task 7*/
+void _div(stack_t **stack, unsigned int line_number);
 /*task 8*/
 void mul(stack_t **stack, unsigned int line_number);
 /*task 9*/

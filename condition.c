@@ -11,7 +11,7 @@ void conditions(char *opcode, size_t line, char *parameter, char *buffer)
 {
 	void (*func)(stack_t **stack, unsigned int line_number);
 	char *valid_opcodes[] = {"push", "pall", "pint", "pop", "swap", "add",
-							 "sub", "mul", "mod", NULL};
+							 "sub", "mul", "mod", "div", NULL};
 
 	/*char *is_comment = strtok(buffer, "\t\n\r\v\f ");*/
 
