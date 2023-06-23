@@ -15,8 +15,8 @@ void conditions(char *opcode, size_t line, char *parameter, char *buffer)
 	if (is_all_whitespace(buffer))
 		return;
 
-	opcode = strtok(buffer, "\t\n ");
-	parameter = strtok(NULL, "\t\n ");
+	opcode = strtok(buffer, "\t\n\r\v\f ");
+	parameter = strtok(NULL, "\t\n\r\v\f ");
 
 	if (strcmp(opcode, "push") == 0 && !is_digit(parameter))
 		which_error(PUSH_ERROR, NULL, line, buffer);
