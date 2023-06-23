@@ -84,6 +84,8 @@ void pint(stack_t **stack, __attribute__((unused)) unsigned int line_number);
 void pop(stack_t **stack, __attribute__((unused)) unsigned int line_number);
 /*task 3*/
 void swap(stack_t **stack, unsigned int line_number);
+/*task 4*/
+void add(stack_t **stack, unsigned int line_number);
 
 void conditions(char *opcode, size_t line, char *parameter, char *buffer);
 #endif
