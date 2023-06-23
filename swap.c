@@ -11,14 +11,14 @@
 
 void swap(stack_t **stack, unsigned int line_number)
 {
-    int temp;
+	int temp;
 
-    if (!*stack || !(*stack)->next)
-    {
-        which_error(SWAP_ERROR, NULL, line_number, NULL);
-    }
+	if (!*stack || !(*stack)->next)
+	{
+		which_error(SWAP_ERROR, NULL, line_number, NULL);
+	}
 
-    temp = (*stack)->n;
-    (*stack)->n = (*stack)->next->n;
-    (*stack)->next->n = temp;
+	temp = (*stack)->n;
+	(*stack)->n = (*stack)->next->n;
+	(*stack)->next->n = temp;
 }
