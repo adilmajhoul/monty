@@ -8,14 +8,11 @@ void free_stack(void)
 {
 	stack_t *head_copy;
 
-	if (head)
+	while (head)
 	{
-		while (head)
-		{
-			head_copy = head;
-			head = head->next;
+		head_copy = head;
+		head = head->next;
 
-			free(head_copy);
-		}
+		free(head_copy);
 	}
 }
