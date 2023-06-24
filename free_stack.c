@@ -6,16 +6,17 @@
 
 void free_stack(void)
 {
-	stack_t *head_copy;
+	stack_t *temp_node = NULL;
 
 	if (head)
 	{
-		while (head)
-		{
-			head_copy = head;
-			head = head->next;
+		temp_node = head;
 
-			free(head_copy);
+		while (temp_node)
+		{
+			head = head->next;
+			free(temp_node);
+			temp_node = head;
 		}
 	}
 }
