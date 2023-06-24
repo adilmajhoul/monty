@@ -89,8 +89,8 @@ void which_error2(int error_number, char *opcode, unsigned int line,
 		break;
 	}
 
-	free_stack();
 	if (buffer)
 		free(buffer);
+	free_stack();
 	exit(EXIT_FAILURE);
 }
