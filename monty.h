@@ -116,6 +116,8 @@ void rotl(stack_t **stack, unsigned int line_number);
 stack_t *add_node_end(stack_t **stack, const int n);
 
 /*task 14*/
+void rotr(stack_t **stack, unsigned int line_number);
+int delete_nodeint_at_index(stack_t **stack, unsigned int index);
 /*task 15*/
 
 void conditions(char *opcode, size_t line, char *parameter, char *buffer);

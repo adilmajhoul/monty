@@ -23,6 +23,7 @@ void (*select_operation(char *opcode_string))(stack_t **, unsigned int)
 		{"pchar", pchar},
 		{"pstr", pstr},
 		{"rotl", rotl},
+		{"rotr", rotr},
 
 		{NULL, NULL}};
 
