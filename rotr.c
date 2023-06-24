@@ -11,13 +11,14 @@
 
 void rotr(stack_t **stack, unsigned int line_number)
 {
-    stack_t *current = *stack;
-    int temp;
     unsigned int index = 0;
+    stack_t *current = *stack;
+    stack_t *prev_node;
+    int temp;
 
     (void)line_number;
 
-    if (!*stack)
+    if (!*stack || !(*stack)->next)
         return;
 
     while (current->next)
@@ -26,6 +27,12 @@ void rotr(stack_t **stack, unsigned int line_number)
         temp = current->n;
         index++;
     }
-    delete_nodeint_at_index(&head, index);
+    /*delete last node*/
+    prev_node = current->prev;
+    prev_node->next = current->next;
+    free(current);
+
     push(&head, temp);
+
+    printf("index is >%d<", temp);
 }
