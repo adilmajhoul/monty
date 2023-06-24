@@ -33,6 +33,4 @@ void rotr(stack_t **stack, unsigned int line_number)
     free(current);
 
     push(&head, temp);
-
-    printf("index is >%d<", temp);
 }
