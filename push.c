@@ -13,8 +13,11 @@ void push(stack_t **stack, unsigned int parameter)
 	stack_t *new_node = NULL;
 
 	new_node = malloc(sizeof(stack_t));
-	if (!new_node)
-		which_error(MALLOC_FAIL, NULL, 0, NULL);
+	if (new_node == NULL)
+	{
+		fprintf(stderr, "USAGE: monty file\n");
+		return;
+	}
 
 	current = *stack;
 	new_node->n = parameter;
