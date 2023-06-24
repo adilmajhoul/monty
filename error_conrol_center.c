@@ -17,6 +17,7 @@ void which_error(int error_number, char *opcode, unsigned int line,
 		/* common errors*/
 	case MALLOC_FAIL:
 		fprintf(stderr, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
 		break;
 	case UNKNOWN_INSTRUCTION:
 		fprintf(stderr, "L%d: unknown instruction %s\n", line, opcode);
