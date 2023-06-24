@@ -74,7 +74,7 @@ void free_stack(void);
 int is_all_whitespace(char *str);
 
 /* error handling */
-void which_error(int error_number, char *opcode, unsigned int line,
+int which_error(int error_number, char *opcode, unsigned int line,
 				 char *buffer);
 /* betty 40 lines :( */
 void which_error2(int error_number, char *opcode, unsigned int line,
