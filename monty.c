@@ -20,8 +20,7 @@ int main(__attribute__((unused)) int argc, char *argv[])
 	char *parameter = NULL;
 
 	file_descriptor = fopen(file_name, "r");
-	check_argv(file_name, argc);
-	file_access(file_name);
+	checker_1(file_name, argc);
 
 	while ((bytes_read = getline(&buffer, &line_length, file_descriptor)) != -1)
 	{
