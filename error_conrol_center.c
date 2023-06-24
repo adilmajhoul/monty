@@ -7,7 +7,7 @@
  * @buffer: The buffer containing the input line (if applicable)
  */
 void which_error(int error_number, char *opcode, unsigned int line,
-				char *buffer)
+				 char *buffer)
 {
 	if (error_number > 307)
 		which_error2(error_number, opcode, line, buffer);
@@ -17,36 +17,28 @@ void which_error(int error_number, char *opcode, unsigned int line,
 		/* common errors*/
 	case MALLOC_FAIL:
 		fprintf(stderr, "Error: malloc failed\n");
-		exit(EXIT_FAILURE);
 		break;
 	case UNKNOWN_INSTRUCTION:
 		fprintf(stderr, "L%d: unknown instruction %s\n", line, opcode);
-		exit(EXIT_FAILURE);
 		break;
 		/*logic errrors */
 	case NO_FILE_ERROR:
 		fprintf(stderr, "USAGE: monty file\n");
-		exit(EXIT_FAILURE);
 		break;
 	case PUSH_ERROR:
 		fprintf(stderr, "L%d: usage: push integer\n", line);
-		exit(EXIT_FAILURE);
 		break;
 	case PINT_ERROR:
 		fprintf(stderr, "L%d: can't pint, stack empty\n", line);
-		exit(EXIT_FAILURE);
 		break;
 	case POP_ERROR:
 		fprintf(stderr, "L%d: can't pop an empty stack\n", line);
-		exit(EXIT_FAILURE);
 		break;
 	case SWAP_ERROR:
 		fprintf(stderr, "L%d: can't swap, stack too short\n", line);
-		exit(EXIT_FAILURE);
 		break;
 	case ADD_ERROR:
 		fprintf(stderr, "L%d: can't add, stack too short\n", line);
-		exit(EXIT_FAILURE);
 		break;
 
 	default:
