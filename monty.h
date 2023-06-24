@@ -19,6 +19,9 @@
 #define MUL_ERROR 311
 #define MOD_ERROR 312
 
+#define PCHAR_RANGE_ERROR 313
+#define PCHAR_EMPTY_ERROR 314
+
 /* headers */
 #include <ctype.h>
 #include <fcntl.h>
@@ -103,6 +106,17 @@ void _div(stack_t **stack, unsigned int line_number);
 void mul(stack_t **stack, unsigned int line_number);
 /*task 9*/
 void mod(stack_t **stack, unsigned int line_number);
+
+/*task 11*/
+void pchar(stack_t **stack, unsigned int line_number);
+/*task 12*/
+void pstr(stack_t **stack, unsigned int line_number);
+/*task 13*/
+void rotl(stack_t **stack, unsigned int line_number);
+stack_t *add_node_end(stack_t **stack, const int n);
+
+/*task 14*/
+/*task 15*/
 
 void conditions(char *opcode, size_t line, char *parameter, char *buffer);
 #endif

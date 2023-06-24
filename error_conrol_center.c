@@ -64,7 +64,6 @@ void which_error2(int error_number, char *opcode, unsigned int line,
 	/* advanced tasks */
 	switch (error_number)
 	{
-
 	case SUB_ERROR:
 		fprintf(stderr, "L%d: can't sub, stack too short\n", line);
 		break;
@@ -80,7 +79,12 @@ void which_error2(int error_number, char *opcode, unsigned int line,
 	case MOD_ERROR:
 		fprintf(stderr, "L%d: can't mod, stack too short\n", line);
 		break;
-
+	case PCHAR_RANGE_ERROR:
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", line);
+		break;
+	case PCHAR_EMPTY_ERROR:
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", line);
+		break;
 	default:
 		break;
 	}

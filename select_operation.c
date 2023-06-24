@@ -20,6 +20,10 @@ void (*select_operation(char *opcode_string))(stack_t **, unsigned int)
 		{"mul", mul},
 		{"mod", mod},
 		{"div", _div},
+		{"pchar", pchar},
+		{"pstr", pstr},
+		{"rotl", rotl},
+
 		{NULL, NULL}};
 
 	int i = 0;
