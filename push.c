@@ -13,7 +13,7 @@ void push(stack_t **stack, unsigned int parameter)
 	stack_t *new_node = NULL;
 
 	new_node = malloc(sizeof(stack_t));
-	if (!new_node)
+	if (new_node == NULL)
 		which_error(MALLOC_FAIL, NULL, 0, NULL);
 
 	current = *stack;
