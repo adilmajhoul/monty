@@ -10,31 +10,32 @@
  */
 stack_t *add_node_end(stack_t **stack, const int n)
 {
-    stack_t *new_node = malloc(sizeof(stack_t));
-    if (new_node == NULL)
-        which_error(MALLOC_FAIL, NULL, 0, NULL);
+	stack_t *new_node = malloc(sizeof(stack_t));
 
-    if (!new_node)
-        return (NULL);
+	if (new_node == NULL)
+		which_error(MALLOC_FAIL, NULL, 0, NULL);
 
-    new_node->n = n;
-    new_node->next = NULL;
+	if (!new_node)
+		return (NULL);
 
-    if (*stack == NULL)
-    {
-        *stack = new_node;
-        new_node->prev = NULL;
-    }
-    else
-    {
-        stack_t *current = *stack;
+	new_node->n = n;
+	new_node->next = NULL;
 
-        while (current->next != NULL)
-        {
-            current = current->next;
-        }
-        current->next = new_node;
-        new_node->prev = current;
-    }
-    return (new_node);
+	if (*stack == NULL)
+	{
+		*stack = new_node;
+		new_node->prev = NULL;
+	}
+	else
+	{
+		stack_t *current = *stack;
+
+		while (current->next != NULL)
+		{
+			current = current->next;
+		}
+		current->next = new_node;
+		new_node->prev = current;
+	}
+	return (new_node);
 }

@@ -11,17 +11,17 @@
 
 void rotl(stack_t **stack, unsigned int line_number)
 {
-    stack_t *current = *stack;
-    int temp;
+	stack_t *current = *stack;
+	int temp;
 
-    if (!*stack)
-        return;
+	if (!*stack)
+		return;
 
-    temp = current->n;
+	temp = current->n;
 
-    while (current->next)
-        current = current->next;
+	while (current->next)
+		current = current->next;
 
-    add_node_end(&head, temp);
-    pop(&head, line_number);
+	add_node_end(&head, temp);
+	pop(&head, line_number);
 }

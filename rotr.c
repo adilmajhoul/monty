@@ -11,26 +11,26 @@
 
 void rotr(stack_t **stack, unsigned int line_number)
 {
-    unsigned int index = 0;
-    stack_t *current = *stack;
-    stack_t *prev_node;
-    int temp;
+	unsigned int index = 0;
+	stack_t *current = *stack;
+	stack_t *prev_node;
+	int temp;
 
-    (void)line_number;
+	(void)line_number;
 
-    if (!*stack || !(*stack)->next)
-        return;
+	if (!*stack || !(*stack)->next)
+		return;
 
-    while (current->next)
-    {
-        current = current->next;
-        temp = current->n;
-        index++;
-    }
-    /*delete last node*/
-    prev_node = current->prev;
-    prev_node->next = current->next;
-    free(current);
+	while (current->next)
+	{
+		current = current->next;
+		temp = current->n;
+		index++;
+	}
+	/*delete last node*/
+	prev_node = current->prev;
+	prev_node->next = current->next;
+	free(current);
 
-    push(&head, temp);
+	push(&head, temp);
 }
