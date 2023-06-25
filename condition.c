@@ -16,11 +16,7 @@ void conditions(char *opcode, size_t line, char *parameter, char *buffer)
 	/*char *is_comment = strtok(buffer, "\t\n\r\v\f ");*/
 
 	if (is_all_whitespace(buffer) || strstr(buffer, "nop") != NULL)
-	{
-		fprintf(stderr, "L%lu: unknown instruction %s\n", line, buffer);
-		exit(EXIT_FAILURE);
-	}
-
+		return;
 	opcode = strtok(buffer, "\t\n\r\v\f ");
 	parameter = strtok(NULL, "\t\n\r\v\f ");
 
