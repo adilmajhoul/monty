@@ -11,6 +11,8 @@
 stack_t *add_node_end(stack_t **stack, const int n)
 {
     stack_t *new_node = malloc(sizeof(stack_t));
+    if (new_node == NULL)
+        which_error(MALLOC_FAIL, NULL, 0, NULL);
 
     if (!new_node)
         return (NULL);
