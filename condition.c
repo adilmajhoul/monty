@@ -11,7 +11,7 @@ void conditions(char *opcode, size_t line, char *parameter, char *buffer)
 {
 	void (*func)(stack_t **stack, unsigned int line_number);
 	char *valid_opcodes[] = {"push", "pall", "pint", "pop", "swap", "add",
-							 "sub", "mul", "mod", "div", "pchar", "pstr", "rotl", "rotr", NULL};
+							 "sub", "mul", "mod", "div", "pchar", "pstr", "rotl", "rotr", "nope", NULL};
 
 	/*char *is_comment = strtok(buffer, "\t\n\r\v\f ");*/
 
@@ -20,7 +20,7 @@ void conditions(char *opcode, size_t line, char *parameter, char *buffer)
 	opcode = strtok(buffer, "\t\n\r\v\f ");
 	parameter = strtok(NULL, "\t\n\r\v\f ");
 
-	if (strstr(buffer, "nop") != NULL)
+	if (strstr(buffer, "nope") != NULL)
 		which_error(UNKNOWN_INSTRUCTION, opcode, line, buffer);
 	if (opcode[0] == '#')
 		return;
