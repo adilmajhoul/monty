@@ -19,7 +19,7 @@ void rotr(stack_t **stack, unsigned int line_number)
     (void)line_number;
 
     if (!*stack || !(*stack)->next)
-        which_error(ROTR_EMPTY_STACK_ERROR, NULL, line_number, NULL);
+        return;
 
     while (current->next)
     {
