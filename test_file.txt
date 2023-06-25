@@ -1,1 +1,2 @@
-push d
+push 1
+rotr

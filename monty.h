@@ -22,6 +22,8 @@
 #define PCHAR_RANGE_ERROR 313
 #define PCHAR_EMPTY_ERROR 314
 
+#define ROTR_EMPTY_STACK_ERROR 315
+
 /* headers */
 #include <ctype.h>
 #include <fcntl.h>

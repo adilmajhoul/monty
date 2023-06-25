@@ -85,6 +85,10 @@ void which_error2(int error_number, char *opcode, unsigned int line,
 	case PCHAR_EMPTY_ERROR:
 		fprintf(stderr, "L%d: can't pchar, stack empty\n", line);
 		break;
+	case ROTR_EMPTY_STACK_ERROR:
+		fprintf(stderr, "L%d: can't rotr, stack too short\n", line);
+		break;
+
 	default:
 		break;
 	}
