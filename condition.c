@@ -15,11 +15,14 @@ void conditions(char *opcode, size_t line, char *parameter, char *buffer)
 
 	/*char *is_comment = strtok(buffer, "\t\n\r\v\f ");*/
 
-	if (is_all_whitespace(buffer) || strstr(buffer, "nop") != NULL)
+	if (is_all_whitespace(buffer))
 		return;
 
 	opcode = strtok(buffer, "\t\n\r\v\f ");
 	parameter = strtok(NULL, "\t\n\r\v\f ");
+
+	if (strcmp(opcode, "nop") == 0)
+		return;
 
 	if (opcode[0] == '#')
 		return;
