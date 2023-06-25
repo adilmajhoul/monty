@@ -14,7 +14,7 @@ void _div(stack_t **stack, unsigned int line_number)
 
     if (!*stack || !(*stack)->next)
     {
-        which_error(MOD_ERROR, NULL, line_number, NULL);
+        which_error(DIV_ERROR, NULL, line_number, NULL);
     }
     if ((*stack)->n == 0)
     {

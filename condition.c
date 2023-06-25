@@ -13,8 +13,6 @@ void conditions(char *opcode, size_t line, char *parameter, char *buffer)
 	char *valid_opcodes[] = {"push", "pall", "pint", "pop", "swap", "add",
 							 "sub", "mul", "mod", "div", "pchar", "pstr", "rotl", "rotr", NULL};
 
-	/*char *is_comment = strtok(buffer, "\t\n\r\v\f ");*/
-
 	if (is_all_whitespace(buffer))
 		return;
 
