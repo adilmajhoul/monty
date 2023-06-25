@@ -20,7 +20,7 @@ void conditions(char *opcode, size_t line, char *parameter, char *buffer)
 	opcode = strtok(buffer, "\t\n\r\v\f ");
 	parameter = strtok(NULL, "\t\n\r\v\f ");
 
-	if (strstr(buffer, "nope") != NULL)
+	if (strstr(buffer, "nop") != NULL)
 		which_error(UNKNOWN_INSTRUCTION, opcode, line, buffer);
 	if (opcode[0] == '#')
 		return;
