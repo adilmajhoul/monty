@@ -38,14 +38,11 @@ void conditions(char *opcode, size_t line, char *parameter, char *buffer)
 		func = select_operation(opcode);
 		if (strcmp(opcode, "push") == 0)
 		{
-			/*
-			if (parameter == NULL)
-				which_error(MALLOC_FAIL, NULL, line, buffer);
-			*/
-
 			func(&head, atoi(parameter));
 		}
 		else
+		{
 			func(&head, line);
+		}
 	}
 }
